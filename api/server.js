@@ -19,6 +19,10 @@ server.use(express.json())
 server.use(helmet())
 server.use(cors())
 
+server.get('/', (req, res) => {
+    res.send('hello')
+})
+
 server.use('/api/users', userRouter)
 server.use('/api/auth', authRouter)
 server.use('/api/events', eventRouter)
